@@ -1,0 +1,16 @@
+{
+  "name": "dictation",
+  "version": "0.0.1",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cozy/cozy-konnector-lemonde.git"
+  },
+  "keywords": ["dictation","school", "spelling"],
+  "author": "Benibur",
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "combokeys": "^3.0.0",
+    "weighted": "^0.3.0"
+  }
+}

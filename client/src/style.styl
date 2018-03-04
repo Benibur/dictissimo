@@ -1,0 +1,30 @@
+body
+    background: white
+    color: #191B1F
+
+#input1
+    font-size: 1.5em
+    padding: 1em
+
+#output_container
+    display:flex
+
+#output_container > div
+    flex-grow:1
+    border:1px solid #7174A4
+
+/* The animation code TODO : doesn't work */
+@keyframes historyHide
+    from {height: 'auto';}
+    to   {height: 0px;}
+
+#history
+    overflow: hidden
+    animation-direction: reverse
+    height: auto
+
+#history.hidden
+    height: 0px
+
+.wrong-answer
+    color:red

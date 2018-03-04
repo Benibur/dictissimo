@@ -1,0 +1,244 @@
+[
+  {
+    "word": "comment",
+    "rights": [ "2018-02-22T17:52:22.084Z", "2018-02-23T15:54:04.896Z" ],
+    "wrongs": [ "2018-02-22T17:49:33.235Z", "2018-02-23T16:06:46.497Z" ],
+    "soundFile": "comment.wav"
+  },
+  {
+    "word": "lait",
+    "rights": [ "2018-02-22T17:39:55.369Z" ],
+    "wrongs": [],
+    "soundFile": "lait.wav"
+  },
+  {
+    "word": "lit",
+    "rights": [
+      "2018-02-23T16:08:07.544Z",
+      "2018-02-23T16:09:19.236Z",
+      "2018-02-23T16:20:04.191Z",
+      "2018-02-24T17:03:53.233Z"
+    ],
+    "wrongs": [ "2018-02-23T16:00:35.872Z", "2018-02-23T16:04:12.060Z" ],
+    "soundFile": "lit.wav"
+  },
+  {
+    "word": "livre",
+    "rights": [ "2018-02-22T17:42:15.016Z" ],
+    "wrongs": [],
+    "soundFile": "livre.wav"
+  },
+  {
+    "word": "les vacances",
+    "rights": [ "2018-02-22T17:35:43.713Z" ],
+    "wrongs": [],
+    "soundFile": "les vacances.wav"
+  },
+  {
+    "word": "avec",
+    "rights": [ "2018-02-22T17:42:28.155Z" ],
+    "wrongs": [],
+    "soundFile": "avec.wav"
+  },
+  {
+    "word": "chocolat",
+    "rights": [ "2018-02-22T17:41:13.843Z" ],
+    "wrongs": [
+      "2018-02-22T17:41:05.705Z",
+      "2018-02-23T15:35:01.909Z",
+      "2018-02-23T16:17:15.601Z",
+      "2018-02-23T16:19:20.990Z",
+      "2018-02-23T16:28:02.371Z"
+    ],
+    "soundFile": "chocolat.wav"
+  },
+  {
+    "word": "cheval",
+    "rights": [ "2018-02-23T15:34:56.128Z" ],
+    "wrongs": [],
+    "soundFile": "cheval.wav"
+  },
+  {
+    "word": "ballon",
+    "rights": [ "2018-02-22T17:39:42.934Z" ],
+    "wrongs": [],
+    "soundFile": "ballon.wav"
+  },
+  {
+    "word": "âne",
+    "rights": [ "2018-02-24T17:04:01.632Z", "2018-03-04T10:32:47.882Z" ],
+    "wrongs": [ "2018-02-23T15:58:49.379Z", "2018-02-24T17:03:56.816Z" ],
+    "soundFile": "âne.wav"
+  },
+  {
+    "word": "château",
+    "rights": [
+      "2018-02-23T15:34:44.516Z",
+      "2018-02-23T16:27:26.914Z",
+      "2018-03-04T10:30:52.959Z",
+      "2018-03-04T10:39:35.797Z"
+    ],
+    "wrongs": [
+      "2018-02-23T15:34:26.125Z",
+      "2018-02-23T15:54:20.976Z",
+      "2018-02-23T16:07:46.157Z",
+      "2018-02-23T16:26:16.679Z"
+    ],
+    "soundFile": "château.wav"
+  },
+  {
+    "word": "voilà",
+    "rights": [ "2018-02-22T17:38:24.079Z", "2018-02-23T15:52:24.529Z" ],
+    "wrongs": [ "2018-02-22T17:37:45.015Z", "2018-02-23T16:09:29.013Z" ],
+    "soundFile": "voilà.wav"
+  },
+  {
+    "word": "déjà",
+    "rights": [ "2018-02-22T17:40:47.716Z" ],
+    "wrongs": [],
+    "soundFile": "déjà.wav"
+  },
+  {
+    "word": "lit",
+    "rights": [ "2018-02-22T17:42:02.833Z" ],
+    "wrongs": [],
+    "soundFile": "lit.wav"
+  },
+  {
+    "word": "tapis",
+    "astuce": "tapisserie",
+    "rights": [ "2018-02-22T17:42:42.695Z" ],
+    "wrongs": [],
+    "soundFile": "tapis.wav"
+  },
+  {
+    "word": "souris",
+    "astuce": "souricière",
+    "rights": [ "2018-02-22T17:42:58.139Z" ],
+    "wrongs": [],
+    "soundFile": "souris.wav"
+  },
+  {
+    "word": "bobine",
+    "rights": [ "2018-02-23T15:53:34.413Z" ],
+    "wrongs": [],
+    "soundFile": "bobine.wav"
+  },
+  {
+    "word": "pipe",
+    "rights": [ "2018-02-22T17:39:23.372Z" ],
+    "wrongs": [],
+    "soundFile": "pipe.wav"
+  },
+  {
+    "word": "cerise",
+    "rights": [ "2018-02-23T15:49:31.762Z" ],
+    "wrongs": [],
+    "soundFile": "cerise.wav"
+  },
+  {
+    "word": "six",
+    "rights": [
+      "2018-02-22T17:36:20.987Z",
+      "2018-02-23T15:49:38.836Z",
+      "2018-02-23T15:53:59.030Z",
+      "2018-03-04T10:34:47.787Z",
+      "2018-03-04T10:39:08.321Z"
+    ],
+    "wrongs": [ "2018-02-22T17:36:00.157Z", "2018-03-04T10:32:59.224Z" ],
+    "soundFile": "six.wav"
+  },
+  {
+    "word": "vingt",
+    "rights": [ "2018-03-04T17:49:24.642Z" ],
+    "wrongs": [],
+    "soundFile": "vingt.wav",
+    "weekDictation": "2018-03-05T02:00:00.000Z"
+  },
+  {
+    "word": "vent",
+    "rights": [ "2018-03-04T10:32:15.778Z" ],
+    "wrongs": [],
+    "soundFile": "vent.wav",
+    "weekDictation": "2018-03-05T02:00:00.000Z"
+  },
+  {
+    "word": "vrai",
+    "rights": [
+      "2018-03-04T10:35:08.954Z",
+      "2018-03-04T17:48:48.196Z",
+      "2018-03-04T18:03:00.793Z"
+    ],
+    "wrongs": [ "2018-03-04T10:35:04.841Z" ],
+    "soundFile": "vrai.wav",
+    "weekDictation": "2018-03-05T02:00:00.000Z"
+  },
+  {
+    "word": "voici",
+    "rights": [ "2018-03-04T10:29:14.542Z" ],
+    "wrongs": [ "2018-03-04T18:04:52.578Z", "2018-03-04T21:14:33.448Z" ],
+    "soundFile": "voici.wav",
+    "weekDictation": "2018-03-05T02:00:00.000Z"
+  },
+  {
+    "word": "anniversaire",
+    "rights": [
+      "2018-03-04T17:45:20.912Z",
+      "2018-03-04T17:47:25.015Z",
+      "2018-03-04T18:04:10.052Z"
+    ],
+    "wrongs": [ "2018-03-04T10:40:44.807Z" ],
+    "soundFile": "anniversaire.wav",
+    "weekDictation": "2018-03-05T02:00:00.000Z"
+  },
+  {
+    "word": "travail",
+    "rights": [ "2018-03-04T10:28:39.890Z", "2018-03-04T18:04:37.414Z" ],
+    "wrongs": [ "2018-03-04T10:25:42.087Z", "2018-03-04T17:49:52.941Z" ],
+    "soundFile": "travail.wav",
+    "weekDictation": "2018-03-05T02:00:00.000Z"
+  },
+  {
+    "word": "pauvre",
+    "rights": [ "2018-03-04T10:24:53.876Z" ],
+    "wrongs": [],
+    "soundFile": "pauvre.wav",
+    "weekDictation": "2018-03-05T02:00:00.000Z"
+  },
+  {
+    "word": "avoir",
+    "rights": [ "2018-03-04T17:48:12.084Z" ],
+    "wrongs": [ "2018-03-04T17:47:46.339Z" ],
+    "soundFile": "avoir.wav",
+    "weekDictation": "2018-03-05T02:00:00.000Z"
+  },
+  {
+    "word": "il avait",
+    "rights": [
+      "2018-03-04T17:46:20.463Z",
+      "2018-03-04T18:03:33.502Z",
+      "2018-03-04T18:05:37.123Z"
+    ],
+    "wrongs": [
+      "2018-03-04T10:35:43.021Z",
+      "2018-03-04T17:46:12.865Z",
+      "2018-03-04T18:03:28.651Z"
+    ],
+    "soundFile": "il avait.wav",
+    "weekDictation": "2018-03-05T02:00:00.000Z"
+  },
+  {
+    "word": "wagon",
+    "rights": [ "2018-03-04T10:31:54.518Z" ],
+    "wrongs": [ "2018-03-04T10:31:28.216Z" ],
+    "soundFile": "wagon.wav",
+    "weekDictation": "2018-03-05T02:00:00.000Z"
+  },
+  {
+    "word": "wc",
+    "rights": [ "2018-03-04T10:31:00.095Z" ],
+    "wrongs": [],
+    "soundFile": "wc.wav",
+    "weekDictation": "2018-03-05T02:00:00.000Z"
+  }
+]

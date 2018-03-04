@@ -1,0 +1,42 @@
+h1 Dictissimus !
+
+//- div#dico_container
+//-   h2 Ajouter des mots au dictionnaire.
+//-   div.word-form
+//-     div Nouveau mot :
+//-       div
+//-         input.week-input(placeholder='Dictée de la semaine', type='week')
+//-         input.word-input(placeholder='Nouveau mot')
+//-         input.rules-input(placeholder='Astuce ?')
+//-         input.astuce-input(placeholder='Règle(s) ?')
+//-         button Ajouter
+
+div#dict_container
+  
+  button(
+    id='playBtn'
+    ) Ré-écoute
+  
+  br
+    
+  input.combokeys(
+    type='text'
+    id='input1'
+    placeholder='Alors, ça s\'écrit comment ?   :-) '
+    autofocus='true'
+    value=''
+  )
+
+  h2#result
+  
+  h2#score Score : 
+    span#rightAnswers
+    span /
+    span#totalAnswers
+      
+  h3 Historique de la dictée
+    button#switchHistBtn +
+    
+  ul#history.hidden
+  
+  

@@ -1,0 +1,42 @@
+{
+  "name": "dictation",
+  "version": "0.0.1",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cozy/cozy-konnector-lemonde.git"
+  },
+  "keywords": [
+    "dictation",
+    "school",
+    "spelling"
+  ],
+  "author": "Benibur",
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.18.2",
+    "coffee-script": "*",
+    "copy-webpack-plugin": "^4.5.0",
+    "css-loader": "*",
+    "express": "^4.16.2",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "jade": "^1.11.0",
+    "jade-loader": "^0.8.0",
+    "json-beautify": "^1.0.1",
+    "node-gtts": "^2.0.2",
+    "nodemon": "^1.15.1",
+    "recordrtc-socketio": "^1.0.6",
+    "sanitize-filename": "^1.6.1",
+    "style-loader": "*",
+    "stylus": "*",
+    "stylus-loader": "*",
+    "webpack": "^1.13.0"
+  },
+  "scripts": {
+    "start": "node ./server/server.js",
+    "devstart": "webpack --watch | nodemon ./server/server.js",
+    "updateSounds": "node ./server/updateSounds.js",
+    "build": "webpack"
+  }
+}
