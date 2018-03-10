@@ -150,7 +150,7 @@
   },
   {
     "word": "vingt",
-    "rights": [],
+    "rights": [ "2018-03-04T17:49:24.642Z" ],
     "wrongs": [],
     "soundFile": "vingt.wav",
     "weekDictation": "2018-03-05T02:00:00.000Z"
@@ -164,7 +164,11 @@
   },
   {
     "word": "vrai",
-    "rights": [ "2018-03-04T10:35:08.954Z" ],
+    "rights": [
+      "2018-03-04T10:35:08.954Z",
+      "2018-03-04T17:48:48.196Z",
+      "2018-03-04T18:03:00.793Z"
+    ],
     "wrongs": [ "2018-03-04T10:35:04.841Z" ],
     "soundFile": "vrai.wav",
     "weekDictation": "2018-03-05T02:00:00.000Z"
@@ -172,21 +176,25 @@
   {
     "word": "voici",
     "rights": [ "2018-03-04T10:29:14.542Z" ],
-    "wrongs": [],
+    "wrongs": [ "2018-03-04T18:04:52.578Z", "2018-03-04T21:14:33.448Z" ],
     "soundFile": "voici.wav",
     "weekDictation": "2018-03-05T02:00:00.000Z"
   },
   {
     "word": "anniversaire",
-    "rights": [],
+    "rights": [
+      "2018-03-04T17:45:20.912Z",
+      "2018-03-04T17:47:25.015Z",
+      "2018-03-04T18:04:10.052Z"
+    ],
     "wrongs": [ "2018-03-04T10:40:44.807Z" ],
     "soundFile": "anniversaire.wav",
     "weekDictation": "2018-03-05T02:00:00.000Z"
   },
   {
     "word": "travail",
-    "rights": [ "2018-03-04T10:28:39.890Z" ],
-    "wrongs": [ "2018-03-04T10:25:42.087Z" ],
+    "rights": [ "2018-03-04T10:28:39.890Z", "2018-03-04T18:04:37.414Z" ],
+    "wrongs": [ "2018-03-04T10:25:42.087Z", "2018-03-04T17:49:52.941Z" ],
     "soundFile": "travail.wav",
     "weekDictation": "2018-03-05T02:00:00.000Z"
   },
@@ -199,15 +207,23 @@
   },
   {
     "word": "avoir",
-    "rights": [],
-    "wrongs": [],
+    "rights": [ "2018-03-04T17:48:12.084Z" ],
+    "wrongs": [ "2018-03-04T17:47:46.339Z" ],
     "soundFile": "avoir.wav",
     "weekDictation": "2018-03-05T02:00:00.000Z"
   },
   {
     "word": "il avait",
-    "rights": [],
-    "wrongs": [ "2018-03-04T10:35:43.021Z" ],
+    "rights": [
+      "2018-03-04T17:46:20.463Z",
+      "2018-03-04T18:03:33.502Z",
+      "2018-03-04T18:05:37.123Z"
+    ],
+    "wrongs": [
+      "2018-03-04T10:35:43.021Z",
+      "2018-03-04T17:46:12.865Z",
+      "2018-03-04T18:03:28.651Z"
+    ],
     "soundFile": "il avait.wav",
     "weekDictation": "2018-03-05T02:00:00.000Z"
   },
@@ -224,5 +240,68 @@
     "wrongs": [],
     "soundFile": "wc.wav",
     "weekDictation": "2018-03-05T02:00:00.000Z"
+  },
+  {
+    "word": "fleur",
+    "rights": [ "2018-03-10T19:38:31.726Z" ],
+    "wrongs": [],
+    "soundFile": "fleur.wav",
+    "weekDictation": "2018-03-12T02:00:00.000Z"
+  },
+  {
+    "word": "fantôme",
+    "rights": [ "2018-03-10T19:39:26.278Z" ],
+    "wrongs": [],
+    "soundFile": "fantôme.wav",
+    "weekDictation": "2018-03-12T02:00:00.000Z"
+  },
+  {
+    "word": "affiche",
+    "rights": [ "2018-03-10T19:48:14.740Z" ],
+    "wrongs": [],
+    "soundFile": "affiche.wav",
+    "weekDictation": "2018-03-12T02:00:00.000Z"
+  },
+  {
+    "word": "mes affaires",
+    "rights": [ "2018-03-10T19:47:37.033Z" ],
+    "wrongs": [],
+    "soundFile": "mes affaires.wav",
+    "weekDictation": "2018-03-12T02:00:00.000Z"
+  },
+  {
+    "word": "un effort",
+    "rights": [ "2018-03-10T19:49:30.573Z" ],
+    "wrongs": [ "2018-03-10T19:40:33.136Z", "2018-03-10T19:49:20.103Z" ],
+    "soundFile": "un effort.wav",
+    "weekDictation": "2018-03-12T02:00:00.000Z"
+  },
+  {
+    "word": "difficile",
+    "rights": [ "2018-03-10T19:48:57.063Z" ],
+    "wrongs": [ "2018-03-10T19:36:02.733Z", "2018-03-10T19:48:54.522Z" ],
+    "soundFile": "difficile.wav",
+    "weekDictation": "2018-03-12T02:00:00.000Z"
+  },
+  {
+    "word": "le téléphone",
+    "rights": [ "2018-03-10T19:43:12.501Z" ],
+    "wrongs": [],
+    "soundFile": "le téléphone.wav",
+    "weekDictation": "2018-03-12T02:00:00.000Z"
+  },
+  {
+    "word": "la pharmacie",
+    "rights": [ "2018-03-10T19:48:34.061Z" ],
+    "wrongs": [],
+    "soundFile": "la pharmacie.wav",
+    "weekDictation": "2018-03-12T02:00:00.000Z"
+  },
+  {
+    "word": "un éléphant",
+    "rights": [],
+    "wrongs": [],
+    "soundFile": "un éléphant.wav",
+    "weekDictation": "2018-03-12T02:00:00.000Z"
   }
 ]

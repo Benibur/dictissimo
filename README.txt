@@ -3,7 +3,7 @@ Pour jouer : `yarn start` puis aller dans http://localhost:3000/
 Pour développer :
   * `yarn devstart`
   * `yarn build`
-  * `yarn upadateSounds`
+  * `yarn updateSounds`
 
 Pour mettre à jour le dico :
     - /server/dico.js :

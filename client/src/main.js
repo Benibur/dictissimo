@@ -7,6 +7,7 @@ const htmlbody = require("./my-jade.jade")()
 const Combokeys = require("combokeys")
 document.body.innerHTML = htmlbody
 
+
 // get html elements references
 const input1El       = document.getElementById('input1')
 const resultEl       = document.getElementById('result')
@@ -15,8 +16,7 @@ const switchHistBtn  = document.getElementById('switchHistBtn')
 const rightAnswersEl = document.getElementById('rightAnswers')
 const totalAnswersEl = document.getElementById('totalAnswers')
 const historyEl      = document.getElementById('history')
-
-
+const rewardGifEl    = document.getElementById('rewardGif')
 
 
 // get dictionnary
@@ -29,8 +29,10 @@ function processRequest(e) {
   if (xhr.readyState == 4 && xhr.status == 200) {
     dico = JSON.parse(xhr.response)
     chooseNewWord()
+    playCurrent()
   }
 }
+
 
 // compute words weights
 let weights = []
@@ -44,7 +46,7 @@ function computeWordWeights(options={exclusions:[], specificDictationWeeks:[]}) 
       weight = 100
     }else {
       weight = Math.round(wrongs/(rights+wrongs)*100)
-      weight = Math.max(2, weight)
+      weight = Math.max(15, weight)
     }
     if (options.exclusions.includes(w)) {
       weight = 0
@@ -59,18 +61,39 @@ function computeWordWeights(options={exclusions:[], specificDictationWeeks:[]}) 
   }
 }
 
+
 // choose a random word
 const weighted = require('weighted')
 let currentWord,
     currentWrongAnswers
 function chooseNewWord() {
-    computeWordWeights({exclusions:[currentWord], specificDictationWeeks:['2018-03-05T02:00:00.000Z']})
-  console.log('chooseNewWord');
-  console.log(weights);
+  computeWordWeights({exclusions:[currentWord], specificDictationWeeks:['2018-03-12T02:00:00.000Z']})
+  // console.log('chooseNewWord');
+  // console.log(weights);
+  _printWeights()
   currentWord = weighted.select(dico, weights)
   currentWrongAnswers = 0
-  console.log("newWord", currentWord.word)
-  playCurrent()
+  console.log("\ newWord", currentWord.word)
+  // playCurrent()
+}
+
+
+
+// Helper function to check the evolution of the dico and test the relevance of weights
+function _printWeights() {
+  console.log('_printWeights()');
+  const displayList = []
+  for (var i = 0; i < weights.length; i++) {
+    const weight = weights[i]
+    const word = dico[i]
+    if (weight>0) {
+      displayList.push([weight,word.word])
+    }
+  }
+  displayList.sort( (el1,el2) => el1[0]<el2[0] )
+  for (item of displayList) {
+    console.log(item[0], item[1]);
+  }
 }
 
 // switch history when clicked
@@ -81,7 +104,9 @@ switchHistBtn.onclick = () => {
   }else {
     switchHistBtn.textContent = '-'
   }
+  input1El.focus()
 }
+
 
 // replay word sound button
 playBtn.onclick = () => {
@@ -94,6 +119,14 @@ function playCurrent() {
 }
 function playError() {
   const audio = new Audio(`/beeps/error-tone.wav`)
+  audio.play()
+  audio.onended = ()=>{
+
+  }
+}
+function playRightAnswer() {
+  const audio = new Audio(`/beeps/welldone-tone.wav`)
+  audio.volume = 0.4
   audio.play()
 }
 
@@ -108,6 +141,7 @@ combokeys.bind('enter', function() {
   checkAnswer()
 })
 
+
 // initiate scores
 let rightAnswers = 0
 let totalAnswers = 0
@@ -117,7 +151,8 @@ function displayScores() {
   totalAnswersEl.textContent = totalAnswers
 }
 
-// check the answer and update database and scores
+
+// Check the answer and update database and scores
 function checkAnswer() {
   const answer = input1El.value
 
@@ -126,38 +161,64 @@ function checkAnswer() {
   totalAnswers += 1
   if (answer === currentWord.word) {
     // was it the right answer at first try ?
+    playRightAnswer()
     if (currentWrongAnswers === 0 ) {
       resultEl.innerHTML = `Well done, la réponse est bien "${answer}" ! !`
+      displayRandomGifReward()
       currentWord.rights.push(new Date())
       rightAnswers += 1
       addHistory(true)
     }else {
-      resultEl.innerHTML = `La réponse était bien au final "${answer}" ! !<br>La prochaine fois tu l'auras du 1er coup :-)`
+      resultEl.innerHTML = `La réponse était bien au final "<span class="correction">${answer}<\span> " ! !<br>La prochaine fois tu l'auras du 1er coup :-)`
       currentWord.rights.push(new Date())
       rightAnswers += 1
       addHistory(false)
     }
     saveDico()
     chooseNewWord()
+    setTimeout(playCurrent, 1000)
     input1El.value = ''
 
   }else {
     // playCurrent()
+    playError()
     if(currentWrongAnswers === 0){
-      playError()
       resultEl.textContent = "Perdu, tente encore une fois !"
       currentWord.wrongs.push(new Date())
       saveDico()
+      currentWrongAnswers += 1
     }else if (currentWrongAnswers === 1) {
-      playError()
-      resultEl.innerHTML = `hum, la bonne réponse était : "${currentWord.word}"<br>Essayons un nouveau mot.`
+      resultEl.innerHTML = `hum, la bonne réponse était : "<span class="correction">${currentWord.word}</span>"<br>Essayons un nouveau mot.`
       addHistory(false)
       chooseNewWord()
+      playCurrent()
       input1El.value = ''
     }
-    currentWrongAnswers += 1
   }
   displayScores()
+}
+
+
+const fileNames = [
+  'weldone-01.gif',
+  'weldone-02.gif',
+  'weldone-03.gif',
+  'weldone-04.gif',
+  'weldone-05.gif',
+  'weldone-06.gif',
+  'weldone-07.gif',
+  'weldone-08.gif',
+  'weldone-09.gif',
+  'weldone-10.gif',
+  'weldone-11.gif',
+]
+function displayRandomGifReward(){
+  const selectedFile = weighted.select(fileNames,(new Array(fileNames.length)).fill(1,0))
+  rewardGifEl.src = '/weldone-gif/' + selectedFile
+  console.log('on a voulu afficher', selectedFile );
+  setTimeout(()=>{
+    rewardGifEl.src = ''
+  },2000)
 }
 
 function addHistory(wasRight) {
@@ -175,13 +236,14 @@ function addHistory(wasRight) {
   }
 }
 
+
 function saveDico() {
   const xhr = new XMLHttpRequest()
   xhr.open('POST', "/dico", true);
   xhr.setRequestHeader("Content-type", "application/json");
   xhr.onreadystatechange = function() {//Call a function when the state changes.
     if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
-        console.log('post done');
+        // console.log('Save dico done');
     }
   }
   xhr.send(JSON.stringify(dico));

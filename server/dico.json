@@ -240,5 +240,68 @@
     "wrongs": [],
     "soundFile": "wc.wav",
     "weekDictation": "2018-03-05T02:00:00.000Z"
+  },
+  {
+    "word": "fleur",
+    "rights": [ "2018-03-10T19:38:31.726Z" ],
+    "wrongs": [],
+    "soundFile": "fleur.wav",
+    "weekDictation": "2018-03-12T02:00:00.000Z"
+  },
+  {
+    "word": "fantôme",
+    "rights": [ "2018-03-10T19:39:26.278Z" ],
+    "wrongs": [],
+    "soundFile": "fantôme.wav",
+    "weekDictation": "2018-03-12T02:00:00.000Z"
+  },
+  {
+    "word": "affiche",
+    "rights": [ "2018-03-10T19:48:14.740Z" ],
+    "wrongs": [],
+    "soundFile": "affiche.wav",
+    "weekDictation": "2018-03-12T02:00:00.000Z"
+  },
+  {
+    "word": "mes affaires",
+    "rights": [ "2018-03-10T19:47:37.033Z" ],
+    "wrongs": [],
+    "soundFile": "mes affaires.wav",
+    "weekDictation": "2018-03-12T02:00:00.000Z"
+  },
+  {
+    "word": "un effort",
+    "rights": [ "2018-03-10T19:49:30.573Z" ],
+    "wrongs": [ "2018-03-10T19:40:33.136Z", "2018-03-10T19:49:20.103Z" ],
+    "soundFile": "un effort.wav",
+    "weekDictation": "2018-03-12T02:00:00.000Z"
+  },
+  {
+    "word": "difficile",
+    "rights": [ "2018-03-10T19:48:57.063Z" ],
+    "wrongs": [ "2018-03-10T19:36:02.733Z", "2018-03-10T19:48:54.522Z" ],
+    "soundFile": "difficile.wav",
+    "weekDictation": "2018-03-12T02:00:00.000Z"
+  },
+  {
+    "word": "le téléphone",
+    "rights": [ "2018-03-10T19:43:12.501Z" ],
+    "wrongs": [],
+    "soundFile": "le téléphone.wav",
+    "weekDictation": "2018-03-12T02:00:00.000Z"
+  },
+  {
+    "word": "la pharmacie",
+    "rights": [ "2018-03-10T19:48:34.061Z" ],
+    "wrongs": [],
+    "soundFile": "la pharmacie.wav",
+    "weekDictation": "2018-03-12T02:00:00.000Z"
+  },
+  {
+    "word": "un éléphant",
+    "rights": [],
+    "wrongs": [],
+    "soundFile": "un éléphant.wav",
+    "weekDictation": "2018-03-12T02:00:00.000Z"
   }
 ]

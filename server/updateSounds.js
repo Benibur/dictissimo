@@ -17,6 +17,7 @@ Promise.map(dico,(w)=>{
   if (FORCE_UPDATE || w.soundFile === undefined || w.soundFile === ''){
     return new Promise((resolve, reject)=>{
       const filename = sanitize(w.word)+'.wav'
+      console.log("\n new sound file :", filename)
       const filepath = path.join(__dirname, SOUNDS_DIR, filename );
       gtts.save(filepath, w.word, function() {
         updateNumber += 1
