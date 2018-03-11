@@ -1,4 +1,5 @@
-// requires
+// get the possible reward gif files
+const rewardFileNames = require('./welldone-gif-filesName.json')
 
 
 // prepare html content
@@ -199,22 +200,9 @@ function checkAnswer() {
 }
 
 
-const fileNames = [
-  'weldone-01.gif',
-  'weldone-02.gif',
-  'weldone-03.gif',
-  'weldone-04.gif',
-  'weldone-05.gif',
-  'weldone-06.gif',
-  'weldone-07.gif',
-  'weldone-08.gif',
-  'weldone-09.gif',
-  'weldone-10.gif',
-  'weldone-11.gif',
-]
 function displayRandomGifReward(){
-  const selectedFile = weighted.select(fileNames,(new Array(fileNames.length)).fill(1,0))
-  rewardGifEl.src = '/weldone-gif/' + selectedFile
+  const selectedFile = weighted.select(rewardFileNames,(new Array(rewardFileNames.length)).fill(1,0))
+  rewardGifEl.src = '/welldone-gif/' + selectedFile
   console.log('on a voulu afficher', selectedFile );
   setTimeout(()=>{
     rewardGifEl.src = ''
