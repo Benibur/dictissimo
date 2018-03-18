@@ -28,12 +28,28 @@ xhr.send();
 xhr.onreadystatechange = processRequest;
 function processRequest(e) {
   if (xhr.readyState == 4 && xhr.status == 200) {
-    dico = JSON.parse(xhr.response)
+    dico = normaliseDico(JSON.parse(xhr.response))
     chooseNewWord()
     playCurrent()
   }
 }
 
+
+// normalise dictionnary Content (in case the dictionnary was created by hand, some fields may have to be normalised)
+function normaliseDico(dico) {
+  for (let word of dico) {
+    if (word.word_ok === undefined) {
+      word.word_ok = ''
+    }
+    if (word.rule === undefined) {
+      word.rule = ''
+    }
+    if (word.hint === undefined) {
+      word.hint = ''
+    }
+  }
+  return dico
+}
 
 // compute words weights
 let weights = []
@@ -68,7 +84,7 @@ const weighted = require('weighted')
 let currentWord,
     currentWrongAnswers
 function chooseNewWord() {
-  computeWordWeights({exclusions:[currentWord], specificDictationWeeks:['2018-03-12T02:00:00.000Z']})
+  computeWordWeights({exclusions:[currentWord], specificDictationWeeks:['2018-03-19T02:00:00.000Z']})
   // console.log('chooseNewWord');
   // console.log(weights);
   _printWeights()
@@ -160,7 +176,7 @@ function checkAnswer() {
   if (answer === '') {return}
 
   totalAnswers += 1
-  if (answer === currentWord.word) {
+  if (answer === currentWord.word || answer === currentWord.word_ok) {
     // was it the right answer at first try ?
     playRightAnswer()
     if (currentWrongAnswers === 0 ) {
@@ -170,7 +186,7 @@ function checkAnswer() {
       rightAnswers += 1
       addHistory(true)
     }else {
-      resultEl.innerHTML = `La réponse était bien au final "<span class="correction">${answer}<\span> " ! !<br>La prochaine fois tu l'auras du 1er coup :-)`
+      resultEl.innerHTML = `La réponse était bien au final "<span class="correction">${answer}</span>" ! !<br>La prochaine fois tu l'auras du 1er coup :-)`
       currentWord.rights.push(new Date())
       rightAnswers += 1
       addHistory(false)
@@ -181,7 +197,6 @@ function checkAnswer() {
     input1El.value = ''
 
   }else {
-    // playCurrent()
     playError()
     if(currentWrongAnswers === 0){
       resultEl.textContent = "Perdu, tente encore une fois !"
@@ -189,7 +204,15 @@ function checkAnswer() {
       saveDico()
       currentWrongAnswers += 1
     }else if (currentWrongAnswers === 1) {
-      resultEl.innerHTML = `hum, la bonne réponse était : "<span class="correction">${currentWord.word}</span>"<br>Essayons un nouveau mot.`
+      var feedback = `hum, la bonne réponse était : "<span class="correction">${currentWord.word}</span>"`
+      if (currentWord.rule !== '') {
+        feedback += `<br>=> Règle : ${currentWord.rule}`
+      }
+      if (currentWord.hint !== '') {
+        feedback += `<br>=> Astuce : ${currentWord.hint}`
+      }
+      feedback += `<br><br>Essayons un nouveau mot.`
+      resultEl.innerHTML = feedback
       addHistory(false)
       chooseNewWord()
       playCurrent()
@@ -206,7 +229,7 @@ function displayRandomGifReward(){
   console.log('on a voulu afficher', selectedFile );
   setTimeout(()=>{
     rewardGifEl.src = ''
-  },2000)
+  },5000)
 }
 
 function addHistory(wasRight) {
