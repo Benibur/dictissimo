@@ -8,7 +8,7 @@ Pour développer :
 Pour mettre à jour le dico :
     - /server/dico.js :
     - y metre des entrées du type {word:''}
-    - exécuter le script `node generatSouds.js` qui va aller chercher les fichiers de sons pour les nouveaux mots
+    - `yarn updateSounds`
 
 Pour ajouter des gif de reward :
 * déposer les gif dans client/src/ressources/welldone-gif

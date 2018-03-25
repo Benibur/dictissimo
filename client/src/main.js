@@ -84,7 +84,7 @@ const weighted = require('weighted')
 let currentWord,
     currentWrongAnswers
 function chooseNewWord() {
-  computeWordWeights({exclusions:[currentWord], specificDictationWeeks:['2018-03-19T02:00:00.000Z']})
+  computeWordWeights({exclusions:[currentWord], specificDictationWeeks:['2018-03-26T02:00:00.000Z']})
   // console.log('chooseNewWord');
   // console.log(weights);
   _printWeights()
@@ -184,13 +184,12 @@ function checkAnswer() {
       displayRandomGifReward()
       currentWord.rights.push(new Date())
       rightAnswers += 1
-      addHistory(true)
     }else {
       resultEl.innerHTML = `La réponse était bien au final "<span class="correction">${answer}</span>" ! !<br>La prochaine fois tu l'auras du 1er coup :-)`
       currentWord.rights.push(new Date())
       rightAnswers += 1
-      addHistory(false)
     }
+    addHistory(true)
     saveDico()
     chooseNewWord()
     setTimeout(playCurrent, 1000)
@@ -198,6 +197,7 @@ function checkAnswer() {
 
   }else {
     playError()
+    addHistory(false)
     if(currentWrongAnswers === 0){
       resultEl.textContent = "Perdu, tente encore une fois !"
       currentWord.wrongs.push(new Date())
@@ -213,7 +213,6 @@ function checkAnswer() {
       }
       feedback += `<br><br>Essayons un nouveau mot.`
       resultEl.innerHTML = feedback
-      addHistory(false)
       chooseNewWord()
       playCurrent()
       input1El.value = ''
@@ -232,17 +231,42 @@ function displayRandomGifReward(){
   },5000)
 }
 
+/*
+  Add the last word in the history of words and display them.
+*/
+let history = []
 function addHistory(wasRight) {
-  const newLi = document.createElement('LI')
-  newLi.textContent = currentWord.word
-  if (wasRight) {
-    newLi.classList.add('right-answer')
-  }else {
-    newLi.classList.add('wrong-answer')
+  const word = currentWord.word
+  // get the possible previous history item or crete a new one
+  let   historyItem = history.find((item)=>{return word === item.word})
+  if (historyItem === undefined) {
+    historyItem = {word:word, ok:0, ko:0}
+    history.push(historyItem)
   }
-  if (historyEl.firstChild) {
-    historyEl.insertBefore(newLi,historyEl.firstChild)
-  }else {
+  // increase the counters of errors or right answers
+  if (wasRight) {
+    historyItem.ok += 1
+  } else {
+    historyItem.ko += 1
+  }
+  // sort history
+  history.sort((a,b)=>{return b.ko - a.ko})
+  // create the html
+  historyEl.innerHTML = ''
+  for (let historyItem of history) {
+    const newLi = document.createElement('LI')
+    let html = `<span class="scores-col">(`
+    if (historyItem.ko > 0) {
+      html += `<span class="wrong-answer">${historyItem.ko}</span>`
+    }
+    if (historyItem.ok > 0) {
+      if (historyItem.ko > 0) {
+        html += `, `
+      }
+      html += `<span>${historyItem.ok}</span>`
+    }
+    html += `)</span>${historyItem.word}`
+    newLi.innerHTML = html
     historyEl.appendChild(newLi)
   }
 }
