@@ -84,9 +84,7 @@ const weighted = require('weighted')
 let currentWord,
     currentWrongAnswers
 function chooseNewWord() {
-  computeWordWeights({exclusions:[currentWord], specificDictationWeeks:['2018-03-26T02:00:00.000Z']})
-  // console.log('chooseNewWord');
-  // console.log(weights);
+  computeWordWeights({exclusions:[currentWord], specificDictationWeeks:['2018-04-16T02:00:00.000Z']})
   _printWeights()
   currentWord = weighted.select(dico, weights)
   currentWrongAnswers = 0
@@ -109,7 +107,7 @@ function _printWeights() {
   }
   displayList.sort( (el1,el2) => el1[0]<el2[0] )
   for (item of displayList) {
-    console.log(item[0], item[1]);
+    console.log('  ',item[0], item[1]);
   }
 }
 
@@ -138,7 +136,7 @@ function playError() {
   const audio = new Audio(`/beeps/error-tone.wav`)
   audio.play()
   audio.onended = ()=>{
-
+    console.log("error ends");
   }
 }
 function playRightAnswer() {
@@ -177,8 +175,8 @@ function checkAnswer() {
 
   totalAnswers += 1
   if (answer === currentWord.word || answer === currentWord.word_ok) {
-    // was it the right answer at first try ?
     playRightAnswer()
+    // was it the right answer at first try ?
     if (currentWrongAnswers === 0 ) {
       resultEl.innerHTML = `Well done, la réponse est bien "${answer}" ! !`
       displayRandomGifReward()
@@ -198,10 +196,10 @@ function checkAnswer() {
   }else {
     playError()
     addHistory(false)
+    saveDico()
     if(currentWrongAnswers === 0){
       resultEl.textContent = "Perdu, tente encore une fois !"
       currentWord.wrongs.push(new Date())
-      saveDico()
       currentWrongAnswers += 1
     }else if (currentWrongAnswers === 1) {
       var feedback = `hum, la bonne réponse était : "<span class="correction">${currentWord.word}</span>"`
@@ -214,7 +212,7 @@ function checkAnswer() {
       feedback += `<br><br>Essayons un nouveau mot.`
       resultEl.innerHTML = feedback
       chooseNewWord()
-      playCurrent()
+      setTimeout(playCurrent, 1000)
       input1El.value = ''
     }
   }
@@ -225,11 +223,11 @@ function checkAnswer() {
 function displayRandomGifReward(){
   const selectedFile = weighted.select(rewardFileNames,(new Array(rewardFileNames.length)).fill(1,0))
   rewardGifEl.src = '/welldone-gif/' + selectedFile
-  console.log('on a voulu afficher', selectedFile );
   setTimeout(()=>{
     rewardGifEl.src = ''
   },5000)
 }
+
 
 /*
   Add the last word in the history of words and display them.
