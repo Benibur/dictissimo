@@ -2,6 +2,10 @@ Pour jouer : `yarn start` puis aller dans http://localhost:3000/
 
 Pour initialiser :
   * `yarn`
+  * `cd client`
+  * `yarn`
+  * `cd ..`
+  * `cd build`
   * `yarn updateSounds`
   * `yarn start`
 
