@@ -1,4 +1,5 @@
-Pour jouer : `yarn start` puis aller dans http://localhost:3000/
+Pour jouer : 
+  * `yarn start` puis aller dans http://localhost:3000/
 
 Pour initialiser :
   * `yarn`
