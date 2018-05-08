@@ -5,8 +5,8 @@ Pour initialiser :
   * `cd client`
   * `yarn`
   * `cd ..`
-  * `cd build`
   * `yarn updateSounds`
+  * `yarn build`
   * `yarn start`
 
 Pour développer :

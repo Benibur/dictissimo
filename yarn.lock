@@ -2228,7 +2228,7 @@ isstream@~0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
 
-jade-loader@^3.0.2:
+jade-loader@^0.8:
   version "0.8.0"
   resolved "https://registry.yarnpkg.com/jade-loader/-/jade-loader-0.8.0.tgz#d1b09971a9bf90a2b298b0af5b1ad0300d109c2e"
   dependencies:
