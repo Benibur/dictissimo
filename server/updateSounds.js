@@ -9,7 +9,7 @@ const fs       = require('fs')
 
 const SOUNDS_DIR   = path.join(__dirname, '../client/src/ressources/sounds')
 const DICO_PATH    = path.join(__dirname, './dico.json')
-const FORCE_UPDATE = true
+const FORCE_UPDATE = false
 const dico         = require(DICO_PATH)
 
 let updateNumber = 0
