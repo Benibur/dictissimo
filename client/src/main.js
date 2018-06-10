@@ -85,7 +85,7 @@ let currentWord,
     currentWrongAnswers
 function chooseNewWord() {
   computeWordWeights({exclusions:[currentWord], specificDictationWeeks:[
-    '2018-05-07T02:00:00.000Z','2018-05-14T02:00:00.000Z'
+    '2018-06-11T02:00:00.000Z'
   ]})
   _printWeights()
   currentWord = weighted.select(dico, weights)
